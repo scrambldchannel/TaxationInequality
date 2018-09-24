@@ -7,6 +7,7 @@ import os
 DEF_strDataDir = '../../data'
 strFile_2015IncomeAssets = 'Steuern_Klassen_Wohnviertel_cleaned.xlsx'
 strFile_BSWVMap = 'WE_StatWohneinteilungen/Wohnviertel.shp'
+strFile_2017AgeDemographics = 'Alter und Wohnviertel.csv'
 
 dAncillaryDataSets = {
     'PropWomenAtWork':          ('Anteil Frauen an den Beschäftigten.csv', 'PropWomenAtWork'),
@@ -131,3 +132,12 @@ def read_WV_map(strDataDir: str = DEF_strDataDir) -> gpd.GeoDataFrame:
     return gpd.read_file(os.path.join(strDataDir, strFile_BSWVMap))
 
 
+def read_2017_age_demographics(strDataDir: str = DEF_strDataDir) -> pd.DataFrame:
+    """
+    read_2017_age_demographics - Import the data for the number of Swiss and non-Swiss males and females in each Wohnviertel
+
+    :param strDataDir: Data directory location. Default: '../../data'
+    :return: pd.DataFrame dfAgeDemographics
+    """
+
+    pd.read_csv(os.path.join(strDataDir, strFile_2017AgeDemographics), sep = ';', decimal=',')
