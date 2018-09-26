@@ -4,7 +4,6 @@ import pandas as pd
 import os
 
 # - Data location default
-# - These defaults cause problems when not 
 DEF_strDataDir = '../../data'
 strFile_2015IncomeAssets = 'Steuern_Klassen_Wohnviertel_cleaned.xlsx'
 strFile_BSWVMap = 'WE_StatWohneinteilungen/Wohnviertel.shp'
@@ -141,4 +140,4 @@ def read_2017_age_demographics(strDataDir: str = DEF_strDataDir) -> pd.DataFrame
     :return: pd.DataFrame dfAgeDemographics
     """
 
-    pd.read_csv(os.path.join(strDataDir, strFile_2017AgeDemographics), sep = ';', decimal=',')
+    return pd.read_csv(os.path.join(strDataDir, strFile_2017AgeDemographics), sep = ';', decimal=',')
