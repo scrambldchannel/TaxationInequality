@@ -4,6 +4,7 @@ import pandas as pd
 import os
 
 # - Data location default
+# - These defaults cause problems when not 
 DEF_strDataDir = '../../data'
 strFile_2015IncomeAssets = 'Steuern_Klassen_Wohnviertel_cleaned.xlsx'
 strFile_BSWVMap = 'WE_StatWohneinteilungen/Wohnviertel.shp'
